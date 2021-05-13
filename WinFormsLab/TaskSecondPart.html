@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h4>Windows Forms - home part</h4>
+	<h2>Nonogram Puzzle</h2>
+	<p>
+	Your task is to create simple interface to solve logic puzzles known as Nonograms.
+	<br/>
+	Nonogram is a puzzle where you have to paint the fields (or leave the field unpainted) on the board accordingly to the numbers that are shown beside rows and above columns. Numbers beside rows indicate how many unbroken by white spaces
+	lines there are in the row and how long they are. Analogously, numbers above each column indicate number of unbroken lines and the their length for each column.
+	<br/>
+	For example, clue '4 5 1' beside row indicate that there is a sequence of 4 painted black fields, then there is some space made by unpainted fields (it is not specified how long), then sequence of 5 painted fields, then again space and 1 painted block. White space can be present before first painted sequence or last painted field.
+	<br/>
+	Goal of this game is to paint those fields so that every row and column clue is used and row/column painted fields don't contradict with each other. Usually, painted fields create some sort of a painting.
+	<br/>
+	Finished nonogram example:
+	<br/>
+	<img src="FinishedNonogramExample.png" alt="Finished nonogram example" width=500>
+	<br/>
+	10x10 nonogram example:
+	<br/>
+	<img src="10x10Example.png" alt="Nonogram example" width=300>
+	<br/>
+	Small nonogram example:
+	<br/>
+	<img src="SmallNonogramExample.png" alt="Small nonogram example" width=200>
+	</p>
+	<ul>
+		<li><a href="">Example application</a></li>
+		<li>Task description:
+		<li>All of the functionality from lab must still working!</li>
+			<ul>
+			<li>Main window and controls:</li>
+				<ul>
+					<li>Main window has a size of 1000x800 and starts centered on the screen</li>
+					<li>Main window is non-resizable and has maximalize button disabled</li>
+					<li>On the top of the window there is a menu bar with 2 options: 'New Game' and 'Create...'</li>
+					<li>Under 'New Game' there are three options: 'Random', 'Choose puzzle...' and 'Load puzzle'</li>
+					<li>Under 'Create...' there is one option: 'Create puzzle'</li>
+					<li>Upon starting application, the main board (10x10) is shown with random game</li>
+				</ul>
+			<li>Board additional features:</li>
+			<ul>
+				<li>Supports crossing out fields. Crossing out fields makes easier to solve the puzzle (it marks the fields that certainly can't be painted from logical assumption)</li>
+				<li>Left-click: When the field was unpainted, it becomes filled with black color</li>
+				<li>Left-click: When the field was filled, it becomes empty (white color)</li>
+				<li>Left-click: When the field was crossed, it becomes filled with black color</li>
+				<li>Right-click: When the field was unpainted, it becomes crossed</li>
+				<li>Right-click: When the field was filled, it becomes crossed</li>
+				<li>Right-click: When the field was crossed, it becomes empty (white color)</li>
+				<li>Two modes:</li>				
+				<ul>
+					<li>Play Mode</li>
+					<ul>
+						<li>All fields are initially empty</li>
+						<li>When all rows/columns clues are fulfilled the game is finished - appropriate message is shown and clicking on fields is disabled</li>
+						<li>Board should be centered in the window</li>
+					</ul>
+					<li>Create Mode</li>
+					<ul>
+						<li>All fields are initially empty</li>
+						<li>Numbers in rows/columns are updated when field is painted</li>
+						<li>Numbers in rows/columns are not changed when field is crossed out</li>
+					</ul>
+				</ul>
+			</ul>
+			<li>Create puzzle:</li>
+				<ul>
+					<li>Clicking on 'Create puzzle' menu item shows window asking to input Width and Height of new puzzle</li>
+					<li>Width/Height window:</li>
+					<ul>
+						<li>Textbox values should be in range 2-15</li>
+						<li>Validates the numbers entered in textboxes</li>
+						<li>Red cross is shown beside textbox when value is out of range or is invalid (e.g. is literal, not numerical)</li>
+						<li>When mouse is over the red cross icon, the tooltip is shown with valid value range</li>
+						<li>Textboxes have initial values when the window is shown</li>
+					</ul>
+					<li>Generates clear board of given size and sets row/column labels '0'</li>
+					<li>The puzzle is moved to the right side of the window</li>
+					<li>On the left side of the window is panel with Puzzle's information: Title and Difficulty (each of them has textbox to input data)</li>
+					<li>Below the puzzle information there is a button to save puzzle</li>
+					<li>Puzzle is in Create Mode</li>
+					<li>Saving puzzle</li>
+					<ul>
+						<li>Writes to file puzzle's Title, Width, Height, Difficulty and row/column clues</li>
+						<li>Save file dialog should force default file extension (chosen appropriately)</li>
+					</ul>
+				</ul>
+			<li>Random game:</li>
+				<ul>
+					<li>Opens window with Width/Height textboxes - the requirements for this window are the same as Width/Height Window in 'Create puzzle' section</li>
+					<li>Generates random board and sets row/column labels to correct values</li>
+					<li>Game should be solvable (that is, rows/columns clues shouldn't contradict each other)</li>
+					<li>Puzzle is in Game Mode</li>
+				</ul>
+			<li>Choose puzzle:</li>
+				<ul>
+					<li>Window area is composed of ListView with listing of all available puzzles</li>
+					<li>There is one texbox (disabled for input) and button to choose folder with saved puzzles</li>
+					<li>When folder is chosen, folder name is loaded into textbox and all puzzles are loaded into ListView</li>
+					<li>Only onle item can be chosen in ListView at the time</li>
+					<li>Items in ListView are composed of the puzzle's: Name, Width, Height and Difficulty</li>
+					<li>Puzzle list can be refreshed by clicking 'Refresh' button</li>
+					<li>When one item is chosen, clicking on 'Load puzzle' button loads the puzzle</li>
+					<li>Puzzle is in Game Mode</li>
+				</ul>
+			<li>Load puzzle:</li>
+				<ul>
+					<li>Opens file dialog to load puzzle file</li>
+					<li>Should force user to load files with correct extension</li>
+					<li>Puzzle is in Game Mode</li>
+				</ul>
+			</ul>
+		</li>
+		<li>Tips:
+			<ul>
+				<li>MenuStrip, Items property</li>
+				<li>FormBorderStyle property</li>
+				<li>Event MouseDown</li>
+				<li>TextAlign property</li>
+				<li>TabStop, FlatStyle properties</li>
+				<li>JsonSerializer/XmlSerializer</li>
+			</ul>
+		</li>
+		<li><i>Note: In all doubtful and untold aspects application should behave like an example app.</i></li>
+	</ul>
+	<ul>
+		<li>Scoring:
+		<ul>
+			<li>Generating new random game: 1 point</li>
+			<li>Width/Height Window values validation: 1 point</li>
+			<li>Creating puzzle: 3 point</li>
+			<li>Saving/loading puzzle: 2 point</li>
+			<li>Puzzle List view: 3 points</li>
+			<li>Crossing out fields on board: 1 point</li>
+			<li>Solving puzzle: checking win condiction, showing win message and disabling clicking on fields: 1 point</li>
+			<li><i>Note: It is not possible to obtain points for incomplete functionality.</i></li>
+		</ul>
+		</li>
+	</ul>
+</body>
+</html>

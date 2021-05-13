@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h4>Windows Forms - lab part</h4>
+	<h2>Nonogram Puzzle</h2>
+	<p>
+	Your task is to create simple interface to solve logic puzzles known as Nonograms.
+	<br/>
+	Nonogram is a puzzle where you have to paint the fields (or leave the field unpainted) on the board accordingly to the numbers that are shown beside rows and above columns. Numbers beside rows indicate how many unbroken by white spaces
+	lines there are in the row and how long they are. Analogously, numbers above each column indicate number of unbroken lines and the their length for each column.
+	<br/>
+	For example, clue '4 5 1' beside row indicate that there is a sequence of 4 painted black fields, then there is some space made by unpainted fields (it is not specified how long), then sequence of 5 painted fields, then again space and 1 painted block. White space can be present before first painted sequence or last painted field.
+	<br/>
+	Goal of this game is to paint those fields so that every row and column clue is used and row/column painted fields don't contradict with each other. Usually, painted fields create some sort of a painting.
+	<br/>
+	Finished nonogram example:
+	<br/>
+	<img src="10x10Example.png" alt="Finished nonogram example" width=300>
+	<br/>
+	Small nonogram example:
+	<br/>
+	<img src="SmallNonogramExample.png" alt="Small nonogram example" width=200>
+	</p>
+	<ul>
+		<li><a href="">Example application</a></li>
+		<li>Task description:
+			<ul>
+			<li>Main window and controls:</li>
+				<ul>
+					<li>Main window has a size of 1000x800 and starts centered on the screen</li>
+					<li>Main window is non-resizable and has maximalize button disabled</li>
+					<li>On the top of the window there is a menu bar with 2 options: 'New Game' and 'Create...'</li>
+					<li>Under 'New Game' there are three options: 'Random', 'Choose puzzle...' and 'Load puzzle' (disabled in lab part)</li>
+					<li>Under 'Create...' there is one option: 'Create puzzle'(disabled in lab part)</li>
+					<li>The main window area is composed from:</li>
+					<ul>
+						<li>board 10x10 (each tile has size of 30x30)</li>
+						<li>labels beside each row and above each column</li>
+					</ul>
+				</ul>
+			<li>Board:</li>
+				<ul>
+					<li>Start board size : 10x10 tiles</li>
+					<li>Each tile size: 30px x 30px</li>
+					<li>Each tile color: white when empty, black when filled</li>
+					<li>There shouldn't be any space between tiles in the board</li>
+					<li>Board should be centered in the window</li>
+					<li>On the start of the application, there is a random puzzle generated and the board is already painted accordingly to the generated board values</li>
+				</ul>
+			<li>Labels:</li>
+				<ul>
+					<li>Labels are shown beside each row and each column</li>
+					<li>Number in row indicate how many unbroken painted lines there are in this row and how long they are</li>
+					<li>Analogously, column text indicate how many unbroken painted lines there are in this column and how long they are</li>
+					<li>Numbers in row labels are separated by a little space (to indicate they are separate)</li>
+					<li>Row labels are aligned to left side of the board, to the center of the row's tiles</li>
+					<li>Column labels are aligned to top side of the board, to the center of the column's tiles</li>
+				</ul>
+			<li>When clicking on specific field:</li>
+				<ul>
+					<li>If the field was empty, it should be filled with black color</li>
+					<li>If the field was filled, it should be emptied with white color</li>
+				</ul>
+			</ul>
+		</li>
+		<li>Tips:
+			<ul>
+				<li>MenuStrip, Items property</li>
+				<li>FormBorderStyle property</li>
+				<li>Event MouseDown</li>
+				<li>TextAlign property</li>
+				<li>TabStop, FlatStyle properties</li>
+			</ul>
+		</li>
+		<li><i>Note: In all doubtful and untold aspects application should behave like an example app.</i></li>
+	</ul>
+	<ul>
+		<li>Scoring:
+		<ul>
+			<li>Properly changed window title and size: 1 point</li>
+			<li>Disabled window maximizing and resizing: 1 point</li>
+			<li>Menu strip: 2 points</li>
+			<li>Drawing board with random pattern: 3 points</li>
+			<li>Labels:</li>
+			<ul>
+				<li>Drawing labels beside rows and above columns: 1 point</li>
+				<li>Correctly calculating numbers for labels: 1 point</li>
+				<li>Correctly positioning and aligning row/column labels to middle right and middle bottom respectively: 2 points</li>
+			</ul>
+			<li>Clicking on the fields change field color: 1 point</li>
+			<li><i>Note: It is not possible to obtain points for incomplete functionality.</i></li>
+		</ul>
+		</li>
+	</ul>
+</body>
+</html>
